@@ -1,0 +1,14 @@
+<h3>Create a short URL for this url</h3>
+
+<%= form_with model: @url do |form| %>
+  <div>
+    <%= form.label :url %><br>
+    <%= form.text_field :original %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<br><br>
+<%= link_to  "List all urls", urls_path %>

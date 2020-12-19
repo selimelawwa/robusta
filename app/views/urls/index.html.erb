@@ -1,0 +1,22 @@
+<h1>URLS</h1>
+
+<%= link_to  "New Short URL", new_url_path %>
+<br><br>
+
+<%if @urls.empty? %>
+    <h5>No URLS exist<h5>
+<%else%>
+    <table>
+        <tr>
+            <th>Original URL</th>
+            <th>Shortened URL</th>
+        </tr>
+        <% @urls.each do |url| %>
+        <tr>
+            <th><%= link_to  url.original, "#{url.original}" %></th>
+            <th><%= link_to  url.short_url, "#{url.short_url}" %></th>
+            <th><%= link_to  "Edit", edit_url_path(url) %></th>
+        </tr>
+        <% end %>
+    </table>
+<%end%>
